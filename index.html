@@ -6,20 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8" />
     <title>DPMP(prototype) Lucknow</title>
     <link rel="stylesheet" href="./css/LPstylesTailwind.css" />
-    <!-- 
-    font family embedding
-    -->
+    <!-- Font family embedding -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <!-- 
-    
-    tailwind css cdn script
-
-    -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script
       src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js"
@@ -46,16 +40,13 @@
           />
         </div>
         <div class="right-menu">
-          <!-- <select name="language" id="language"> -->
           <select name="language" id="language" title="Language">
             <option value="english" style="color: #1a2238">English</option>
             <option value="state-language" style="color: #1a2238">
               State Language
             </option>
             <option value="Hindi" style="color: #1a2238">Hindi</option>
-            <!-- more language options can be added  -->
           </select>
-          <!-- sign in button -->
           <div>
             <select name="signIn" id="sign-in">
               <option value="" disabled selected>Sign in</option>
@@ -75,9 +66,6 @@
                 }
               });
           </script>
-          <!-- Popup container -->
-
-          <!--  -->
         </div>
       </div>
       <div class="container2">
@@ -86,15 +74,81 @@
       <div class="container3">
         <nav>
           <ul>
-            <li class="nav-list-item"><a href="LPindex.html">Home</a></li>
-            <li class="nav-list-item"><a href="#services">Services</a></li>
-            <li class="nav-list-item">
-              <a href="#departments">Departments</a>
+            <!-- Home with dropdown -->
+            <li class="nav-list-item dropdown">
+              <a href="LPindex.html">Home</a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to main dashboard --></a>Dashboard</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to projects overview --></a>Projects</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to recent updates --></a>Recent Updates</li>
+              </ul>
             </li>
-            <li class="nav-list-item"><a href="#notice">Notice</a></li>
-            <li class="nav-list-item"><a href="#documents">Documents</a></li>
-            <li class="nav-list-item"><a href="#links">links</a></li>
-            <li class="nav-list-item"><a href="#photos">city Gallery</a></li>
+
+            <!-- Services with dropdown -->
+            <li class="nav-list-item dropdown">
+              <a href="#services">Services</a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to water services --></a>Water Supply</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to electricity services --></a>Electricity</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to waste management --></a>Waste Management</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to transportation --></a>Transportation</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to healthcare services --></a>Healthcare</li>
+              </ul>
+            </li>
+
+            <!-- Departments with dropdown -->
+            <li class="nav-list-item dropdown">
+              <a href="#departments">Departments</a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to Public Works Department --></a>Public Works</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to Health Department --></a>Health & Sanitation</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to Education Department --></a>Education</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to Finance Department --></a>Finance</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to Urban Development --></a>Urban Development</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to Police Department --></a>Police</li>
+              </ul>
+            </li>
+
+            <!-- Notice with dropdown -->
+            <li class="nav-list-item dropdown">
+              <a href="#notice">Notice</a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to official notices --></a>Official Notices</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to tenders --></a>Tenders</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to announcements --></a>Announcements</li>
+              </ul>
+            </li>
+
+            <!-- Documents with dropdown -->
+            <li class="nav-list-item dropdown">
+              <a href="#documents">Documents</a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to forms --></a>Forms</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to licenses --></a>Licenses & Permits</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to guidelines --></a>Guidelines</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to policies --></a>Policies</li>
+              </ul>
+            </li>
+
+            <!-- Links with dropdown -->
+            <li class="nav-list-item dropdown">
+              <a href="#links">Links</a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to external resources --></a>External Resources</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to partner organizations --></a>Partners</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to important links --></a>Important Links</li>
+              </ul>
+            </li>
+
+            <!-- City Gallery with dropdown -->
+            <li class="nav-list-item dropdown">
+              <a href="#photos">City Gallery</a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to historical photos --></a>Historical Gallery</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to project photos --></a>Project Photos</li>
+                <li><a href="index.html"><!-- TODO: Future developer - Add link to city events --></a>City Events</li>
+              </ul>
+            </li>
           </ul>
         </nav>
       </div>

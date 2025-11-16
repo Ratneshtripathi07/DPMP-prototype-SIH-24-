@@ -2716,10 +2716,73 @@ header {
 
 .nav-list-item {
   transition: transform 0.3s ease-in-out;
+  position: relative;
 }
 
 .nav-list-item:hover {
   transform: scale(1.1);
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+  position: relative;
+  z-index: 100;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2d3e50;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Show dropdown when active (clicked on mobile) */
+.dropdown.active .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  border-bottom: 1px solid #3d4e66;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s ease, padding-left 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+  background-color: #9daaf2;
+  padding-left: 25px;
+  color: #ffffff;
 }
 
 .container2 {

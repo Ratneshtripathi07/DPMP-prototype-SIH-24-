@@ -1,41 +1,30 @@
-// Get the carousel wrapper and navigation buttons
+// Carousel functionality
 const carouselWrapper = document.querySelector(".carousel-wrapper");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 
-// Set the initial translateX value
 let translateX = 0;
-
-// Set the carousel item width
 const itemWidth = carouselWrapper.children[0].offsetWidth;
-
-// Calculate the total width of all images
 const totalItems = carouselWrapper.children.length;
 const totalWidth = totalItems * itemWidth;
 
-// Clone the first and last images
 const firstImage = carouselWrapper.children[0].cloneNode(true);
 const lastImage = carouselWrapper.children[totalItems - 1].cloneNode(true);
 
-// Append cloned first image to the end and cloned last image to the beginning
 carouselWrapper.appendChild(firstImage);
 carouselWrapper.insertBefore(lastImage, carouselWrapper.children[0]);
 
-// Update total width after adding cloned nodes
 const updatedTotalItems = carouselWrapper.children.length;
 const updatedTotalWidth = updatedTotalItems * itemWidth;
 
-// Set initial position to the first actual item (skip cloned last image)
 translateX = -itemWidth;
 carouselWrapper.style.transform = `translateX(${translateX}px)`;
 
-// Helper function to move the carousel
 const moveCarousel = () => {
   carouselWrapper.style.transform = `translateX(${translateX}px)`;
   carouselWrapper.style.transition = "transform 0.4s ease";
 };
 
-// Add event listeners to navigation buttons
 prevBtn.addEventListener("click", () => {
   translateX += itemWidth;
   moveCarousel();
@@ -55,28 +44,22 @@ nextBtn.addEventListener("click", () => {
 
   if (translateX <= -(updatedTotalWidth - itemWidth)) {
     setTimeout(() => {
-      translateX = -itemWidth; // Move to first actual item
+      translateX = -itemWidth;
       carouselWrapper.style.transition = "none";
       moveCarousel();
     }, 400);
   }
 });
 
-// Auto-scrolling functionality
 setInterval(() => {
   nextBtn.click();
-}, 3500); // 3.5 seconds
+}, 3500);
 
-// Reset transition for instant position change
 carouselWrapper.addEventListener("transitionend", () => {
   carouselWrapper.style.transition = "transform 4s ease";
 });
 
-//
-// js code for the sign in popup
-// trigger onClick
-//
-
+// Sign-in popup functionality
 const signInButton = document.getElementById("signInButton");
 const popupContainer = document.getElementById("popupContainer");
 const citizenButton = document.getElementById("citizenButton");
@@ -100,5 +83,42 @@ adminButton.addEventListener("click", () => {
 document.addEventListener("click", (e) => {
   if (e.target === popupContainer) {
     popupContainer.classList.add("hidden");
+  }
+});
+
+// ============================================
+// Dropdown Menu Click Functionality
+// ============================================
+// Toggle dropdown on click for mobile/tablet devices
+const dropdownItems = document.querySelectorAll(".dropdown");
+
+dropdownItems.forEach((dropdown) => {
+  const link = dropdown.querySelector("a");
+
+  link.addEventListener("click", (e) => {
+    // Check if there's a dropdown menu
+    const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+    if (dropdownMenu) {
+      e.preventDefault();
+      
+      // Close all other dropdowns
+      dropdownItems.forEach((otherDropdown) => {
+        if (otherDropdown !== dropdown) {
+          otherDropdown.classList.remove("active");
+        }
+      });
+
+      // Toggle current dropdown
+      dropdown.classList.toggle("active");
+    }
+  });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".dropdown")) {
+    dropdownItems.forEach((dropdown) => {
+      dropdown.classList.remove("active");
+    });
   }
 });
